@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Colors } from './components/colors/Colors';
 import { Home } from './components/home/Home';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { States } from './components/states/States';
 
 const colorClient = new ApolloClient({
   uri: 'https://api.sampleapis.com/css-color-names/graphql',
@@ -21,6 +22,9 @@ export const App = () => {
             <ApolloProvider client={colorClient}>
               <Colors />
             </ApolloProvider>
+          </Route>
+          <Route path="/states">
+            <States />
           </Route>
           <Route path="/">
             <Home />

@@ -11,10 +11,17 @@ export const Home = () => (
       <li>
         <Link to="/colors">Colors</Link> - App using GraphQL Colors API
       </li>
+      <li>
+        <Link to="/states">The United States</Link> - App using custom
+        useAsyncHook around the United States API.
+      </li>
     </ProjectList>
   </>
 );
 
 const ProjectList = styled.ul`
   list-style: none;
+  li {
+    margin: 5px 0;
+  }
 `;

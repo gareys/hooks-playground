@@ -23,8 +23,8 @@ export const Colors = () => {
   const handleGetMoreColors = () => {
     fetchMore({
       variables: {
-        perPage: 25,
         page: nextPage,
+        perPage: 25,
       },
       updateQuery: (prev, { fetchMoreResult }) => {
         if (!fetchMoreResult.allColors.length) {
