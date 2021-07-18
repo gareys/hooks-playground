@@ -122,6 +122,7 @@ const Board = styled.table`
   width: 128px;
   min-width: 160px;
   display: block;
+  user-select: none;
 `;
 
 const Cell = styled.td<{ disabled: boolean }>`
