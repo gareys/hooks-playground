@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Colors } from './components/colors/Colors';
 import { Home } from './components/home/Home';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { States } from './components/states/States';
+import { BackLink } from './components/shared/BackLink';
+import { Countries } from './components/countries/Countries';
 
 const colorClient = new ApolloClient({
   uri: 'https://api.sampleapis.com/css-color-names/graphql',
@@ -12,16 +14,24 @@ const colorClient = new ApolloClient({
 });
 
 export const App = () => {
-  const [count, setCount] = useState(0);
-
   return (
     <AppContainer>
       <Router>
+        <div>
+          <nav>
+            <Link to="/">Home</Link>
+            {` | `}
+            <BackLink />
+          </nav>
+        </div>
         <Switch>
           <Route path="/colors">
             <ApolloProvider client={colorClient}>
               <Colors />
             </ApolloProvider>
+          </Route>
+          <Route path="/countries">
+            <Countries />
           </Route>
           <Route path="/states">
             <States />

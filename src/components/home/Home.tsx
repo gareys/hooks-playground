@@ -9,11 +9,15 @@ export const Home = () => (
     <h2>Projects</h2>
     <ProjectList>
       <li>
-        <Link to="/colors">Colors</Link> - App using GraphQL Colors API
+        <Link to="/colors">Colors</Link> - GraphQL Colors API w/ pagination
       </li>
       <li>
-        <Link to="/states">The United States</Link> - App using custom
-        useAsyncHook around the United States API.
+        <Link to="/countries">Countries</Link> - Basic async useEffect w/
+        countries API
+      </li>
+      <li>
+        <Link to="/states">The United States</Link> - Custom useAsyncHook w/
+        U.S. API
       </li>
     </ProjectList>
   </>
