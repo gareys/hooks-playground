@@ -19,6 +19,10 @@ export const Home = () => (
         <Link to="/states">The United States</Link> - Custom useAsyncHook w/
         U.S. API
       </li>
+      <li>
+        <Link to="/tictactoe">TicTacToe</Link> - TicTacToe game leveraging many
+        hooks
+      </li>
     </ProjectList>
   </>
 );

@@ -51,14 +51,16 @@ export const Countries = () => {
               <h2>{country.name}</h2>
               <CountryDetailsList>
                 <li>
-                  <strong>Capital:</strong> {country.capital}
+                  <strong>Capital:&nbsp;&nbsp;&nbsp;</strong>
+                  {country.capital}
                 </li>
                 <li>
-                  <strong>Population:</strong>{' '}
+                  <strong>Population:&nbsp;&nbsp;&nbsp;</strong>
                   {country.population?.toLocaleString() || 'N/A'}
                 </li>
                 <li>
-                  <strong>Currency:</strong> {country.currency || 'N/A'}
+                  <strong>Currency:&nbsp;&nbsp;&nbsp;</strong>
+                  {country.currency || 'N/A'}
                 </li>
               </CountryDetailsList>
             </CountryDetails>

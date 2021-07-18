@@ -7,6 +7,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { States } from './components/states/States';
 import { BackLink } from './components/shared/BackLink';
 import { Countries } from './components/countries/Countries';
+import { TicTacToe } from './components/tictactoe/TicTacToe';
 
 const colorClient = new ApolloClient({
   uri: 'https://api.sampleapis.com/css-color-names/graphql',
@@ -35,6 +36,9 @@ export const App = () => {
           </Route>
           <Route path="/states">
             <States />
+          </Route>
+          <Route path="/tictactoe">
+            <TicTacToe />
           </Route>
           <Route path="/">
             <Home />
