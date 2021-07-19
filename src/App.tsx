@@ -1,23 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Colors } from './components/colors/Colors';
 import { Home } from './components/home/Home';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { States } from './components/states/States';
 import { BackLink } from './components/shared/BackLink';
 import { Countries } from './components/countries/Countries';
 import { TicTacToe } from './components/tictactoe/TicTacToe';
-
-const colorClient = new ApolloClient({
-  uri: 'https://api.sampleapis.com/css-color-names/graphql',
-  cache: new InMemoryCache(),
-});
+import { ColorsScene } from './components/colors/ColorsScene';
+import { ThemesScene } from './components/themes/ThemesScene';
+import { AdvancedThemesScene } from './components/themes/AdvancedThemesScene';
 
 export const App = () => {
   return (
     <AppContainer>
-      <Router>
+      <Router basename="/hooks-playground">
         <div>
           <nav>
             <Link to="/">Home</Link>
@@ -27,9 +23,7 @@ export const App = () => {
         </div>
         <Switch>
           <Route path="/colors">
-            <ApolloProvider client={colorClient}>
-              <Colors />
-            </ApolloProvider>
+            <ColorsScene />
           </Route>
           <Route path="/countries">
             <Countries />
@@ -39,6 +33,12 @@ export const App = () => {
           </Route>
           <Route path="/tictactoe">
             <TicTacToe />
+          </Route>
+          <Route path="/themes">
+            <ThemesScene />
+          </Route>
+          <Route path="/advancedThemes">
+            <AdvancedThemesScene />
           </Route>
           <Route path="/">
             <Home />

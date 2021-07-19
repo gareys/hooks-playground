@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { ImageWithErrorFallback } from '../shared/ImageWithErrorFallback';
 
 type Country = {
   abbreviation: string;
@@ -75,20 +76,6 @@ export const Countries = () => {
     </CountryList>
   );
 };
-
-const ImageWithErrorFallback = (
-  props: React.DetailedHTMLProps<
-    React.ImgHTMLAttributes<HTMLImageElement>,
-    HTMLImageElement
-  >
-) => (
-  <img
-    onError={(e) => {
-      e.currentTarget.src = '';
-    }}
-    {...props}
-  />
-);
 
 const CountryList = styled.ul`
   list-style: none;

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useAsyncHook } from '../../hooks/useAsyncHook';
+import { ImageWithErrorFallback } from '../shared/ImageWithErrorFallback';
 type State = {
   id: number;
   name: string;
@@ -60,7 +61,7 @@ const StateDescription = styled.div`
   margin-left: calc(2em + 25px);
 `;
 
-const FlagImg = styled.img`
+const FlagImg = styled(ImageWithErrorFallback)`
   width: 2em;
   margin-right: 20px;
 `;

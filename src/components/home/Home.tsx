@@ -20,8 +20,15 @@ export const Home = () => (
         U.S. API
       </li>
       <li>
-        <Link to="/tictactoe">TicTacToe</Link> - TicTacToe game leveraging many
-        hooks
+        <Link to="/tictactoe">Tic Tac Toe</Link> - Tic Tac Toe game with
+        useState and canvas
+      </li>
+      <li>
+        <Link to="/themes">Themes</Link> - Theme switcher with basic contexts
+      </li>
+      <li>
+        <Link to="/advancedThemes">Advanced Themes</Link> - Theme switcher with
+        advanced contexts
       </li>
     </ProjectList>
   </>
