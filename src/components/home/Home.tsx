@@ -1,12 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import hookImg from '../../hook.svg';
 
 export const Home = () => (
   <>
-    <h1>Hooks Playground</h1>
+    <Heading>
+      Hooks Playground
+      <HookHolster>
+        <Hook src={hookImg} />
+      </HookHolster>
+    </Heading>
     <hr />
-    <h2>Projects</h2>
+    <p>Yarrrrr maties. There be many hooks examples in here. Ye be warned.</p>
+    <h2>Examples</h2>
     <ProjectList>
       <li>
         <Link to="/colors">Colors</Link> - GraphQL Colors API w/ pagination
@@ -38,5 +45,38 @@ const ProjectList = styled.ul`
   list-style: none;
   li {
     margin: 5px 0;
+  }
+`;
+
+const Heading = styled.h1`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const HookHolster = styled.div`
+  width: 100px;
+  display: flex;
+  justify-content: center;
+`;
+
+const Hook = styled.img`
+  height: 43px;
+  width: auto;
+  animation: wobble 5s infinite;
+  transform: rotate(-45deg);
+  transform-origin: bottom right;
+
+  @keyframes wobble {
+    from {
+      transform: rotate(-45deg);
+    }
+
+    50% {
+      transform: rotate(90deg);
+    }
+
+    to {
+      transform: rotate(-45deg);
+    }
   }
 `;
