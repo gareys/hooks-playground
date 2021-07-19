@@ -3,6 +3,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "deploy": "./deploy.sh",
     "serve": "vite preview"
   },
   "dependencies": {
