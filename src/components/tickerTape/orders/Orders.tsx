@@ -28,7 +28,7 @@ export const Orders = ({
   return (
     <>
       {memoedSellOrders}
-      {sellOrders.length && buyOrders.length && <Break />}
+      {!!sellOrders.length && !!buyOrders.length && <Break />}
       {memoedBuyOrders}
     </>
   );
