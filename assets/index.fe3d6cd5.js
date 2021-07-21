@@ -201,7 +201,7 @@ var e=Object.defineProperty,t=Object.getOwnPropertySymbols,l=Object.prototype.ha
   text-align: left;
   color: ${({type:e})=>"sell"===e?"rgb(250,103,45)":"rgb(45,175,52)"};
   padding-left: 25px;
-`,be=({buyOrders:e,sellOrders:t})=>{const l=i.exports.useMemo((()=>e.map((({id:e,size:t,price:l})=>o.createElement(ge,{key:e,price:l,size:t,type:"buy"})))),[e]),r=i.exports.useMemo((()=>t.map((({id:e,size:t,price:l})=>o.createElement(ge,{key:e,price:l,size:t,type:"sell"})))),[t]);return o.createElement(o.Fragment,null,r,t.length&&e.length&&o.createElement(ve,null),l)},ve=a.hr`
+`,be=({buyOrders:e,sellOrders:t})=>{const l=i.exports.useMemo((()=>e.map((({id:e,size:t,price:l})=>o.createElement(ge,{key:e,price:l,size:t,type:"buy"})))),[e]),r=i.exports.useMemo((()=>t.map((({id:e,size:t,price:l})=>o.createElement(ge,{key:e,price:l,size:t,type:"sell"})))),[t]);return o.createElement(o.Fragment,null,r,!!t.length&&!!e.length&&o.createElement(ve,null),l)},ve=a.hr`
   border-color: #333;
   width: 100%;
 `,we=()=>({id:Math.random(),size:(1+Math.random()).toString().slice(0,6),price:(200+2e3*Math.random()).toString().slice(0,8)}),ke=()=>{const[e,t]=i.exports.useState([]),[l,r]=i.exports.useState([]);return o.createElement(Ce,null,o.createElement(Se,null,o.createElement(Te,{onClick:()=>{t((e=>[...e,we()].sort(((e,t)=>Number(t.price)-Number(e.price)))))},orderType:"buy"},"Buy"),o.createElement(Te,{onClick:()=>{r((e=>[...e,we()].sort(((e,t)=>Number(t.price)-Number(e.price)))))},orderType:"sell"},"Sell")),o.createElement(be,{buyOrders:e,sellOrders:l}))},Ce=a.div`
