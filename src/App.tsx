@@ -9,6 +9,7 @@ import { TicTacToe } from './components/tictactoe/TicTacToe';
 import { ColorsScene } from './components/colors/ColorsScene';
 import { ThemesScene } from './components/themes/ThemesScene';
 import { AdvancedThemesScene } from './components/themes/AdvancedThemesScene';
+import { TickerTape } from './components/tickerTape/TickerTape';
 
 export const App = () => {
   return (
@@ -39,6 +40,9 @@ export const App = () => {
           </Route>
           <Route path="/advancedThemes">
             <AdvancedThemesScene />
+          </Route>
+          <Route path="/tickerTape">
+            <TickerTape />
           </Route>
           <Route path="/">
             <Home />

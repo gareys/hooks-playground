@@ -37,6 +37,10 @@ export const Home = () => (
         <Link to="/advancedThemes">Advanced Themes</Link> - Theme switcher with
         advanced contexts
       </li>
+      <li>
+        <Link to="/tickerTape">Ticker Tape</Link> - Stock Ticker Tape using
+        useMemo
+      </li>
     </ProjectList>
   </>
 );
