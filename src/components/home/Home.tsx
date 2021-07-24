@@ -38,7 +38,7 @@ export const Home = () => (
         advanced contexts
       </li>
       <li>
-        <Link to="/tickerTape">Ticker Tape</Link> - Stock Ticker Tape using
+        <Link to="/orderTape">Order Tape</Link> - Fast Food Order Tape using
         useMemo
       </li>
     </ProjectList>

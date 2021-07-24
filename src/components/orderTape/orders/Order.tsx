@@ -3,18 +3,35 @@ import styled from 'styled-components';
 import { OrderType, UniqOrder } from '../constants';
 
 export const Order = ({
+  number,
   price,
-  size,
+  item,
   type,
+  removeOrder,
 }: {
+  number: string;
   price: UniqOrder['price'];
-  size: UniqOrder['size'];
+  item: UniqOrder['item'];
   type: OrderType;
+  removeOrder: () => void;
 }) => {
   return (
     <OrderContainer>
-      <Size>{size}</Size>
+      <span>{number}</span>
+      <Item>{item}</Item>
       <Price type={type}>{price}</Price>
+      <button onClick={removeOrder}>Complete</button>
+    </OrderContainer>
+  );
+};
+
+export const OrderHeader = ({ type }: { type: OrderType }) => {
+  return (
+    <OrderContainer>
+      <span>Order</span>
+      <Item>Item</Item>
+      <Price type={type}>Price</Price>
+      <span>Complete</span>
     </OrderContainer>
   );
 };
@@ -36,7 +53,7 @@ const OrderContainer = styled.div`
   }
 `;
 
-const Size = styled.div`
+const Item = styled.div`
   flex: 1;
   text-align: right;
   color: #fff;
@@ -46,7 +63,6 @@ const Size = styled.div`
 const Price = styled.span<{ type: OrderType }>`
   flex: 1;
   text-align: left;
-  color: ${({ type }) =>
-    type === 'sell' ? 'rgb(250,103,45)' : 'rgb(45,175,52)'};
+  color: ${({ type }) => (type === 'togo' ? '#fae52d' : '#30bb37')};
   padding-left: 25px;
 `;

@@ -90,9 +90,9 @@ export const TicTacToe = () => {
           </tr>
         </tbody>
       </Board>
-      {winner && <Canvas ref={canvasRef} />}
       {winner && (
         <>
+          <Canvas ref={canvasRef} />
           <p>The Winner is {winner.play}!</p>
           <p>They won on the {winner.location.split('_').join(' ')}.</p>
         </>

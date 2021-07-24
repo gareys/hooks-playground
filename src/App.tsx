@@ -9,7 +9,7 @@ import { TicTacToe } from './components/tictactoe/TicTacToe';
 import { ColorsScene } from './components/colors/ColorsScene';
 import { ThemesScene } from './components/themes/ThemesScene';
 import { AdvancedThemesScene } from './components/themes/AdvancedThemesScene';
-import { TickerTape } from './components/tickerTape/TickerTape';
+import { OrderTape } from './components/orderTape/OrderTape';
 
 export const App = () => {
   return (
@@ -41,8 +41,8 @@ export const App = () => {
           <Route path="/advancedThemes">
             <AdvancedThemesScene />
           </Route>
-          <Route path="/tickerTape">
-            <TickerTape />
+          <Route path="/orderTape">
+            <OrderTape />
           </Route>
           <Route path="/">
             <Home />
