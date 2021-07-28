@@ -13,7 +13,6 @@ export const Clock = ({ time = new Date() }) => {
 
   return (
     <Face>
-      <GlobalStyle degrees={secondDegrees} />
       <Markers />
       <div
         className="hour hand"
@@ -38,13 +37,3 @@ export const Clock = ({ time = new Date() }) => {
     </Face>
   );
 };
-
-const GlobalStyle = createGlobalStyle<{ degrees: number }>`
-  @keyframes bounce {
-    0% { transform: rotate(${({ degrees }) => degrees}deg); }
-    2% { transform: rotate(${({ degrees }) => degrees + 1}deg); }
-    8% { transform: rotate(${({ degrees }) => degrees - 0.3}deg); }
-    15% { transform: rotate(${({ degrees }) => degrees}deg); }
-    100% { transform: rotate(${({ degrees }) => degrees}deg); }
-  }
-`;
