@@ -1,9 +1,9 @@
-var e=Object.defineProperty,t=Object.getOwnPropertySymbols,r=Object.prototype.hasOwnProperty,n=Object.prototype.propertyIsEnumerable,l=(t,r,n)=>r in t?e(t,r,{enumerable:!0,configurable:!0,writable:!0,value:n}):t[r]=n;import{q as a,R as o,L as i,C as c,u as s,g as m,a as d,A as u,I as p,b as h,G as g,$ as E,B as f,S as x,c as b,d as y}from"./vendor.c092237c.js";const v=()=>o.createElement(o.Fragment,null,o.createElement(w,null,"Hooks Playground",o.createElement(C,null,o.createElement(T,{src:"/hooks-playground/assets/hook.3bb9184a.svg"}))),o.createElement("hr",null),o.createElement("p",null,"Yarrrrr maties. There be many hooks examples in here. Ye be warned."),o.createElement("h2",null,"Examples"),o.createElement(k,null,o.createElement("li",null,o.createElement(i,{to:"/colors"},"Colors")," - GraphQL Colors API w/ pagination"),o.createElement("li",null,o.createElement(i,{to:"/countries"},"Countries")," - Basic async useEffect w/ countries API"),o.createElement("li",null,o.createElement(i,{to:"/states"},"The United States")," - Custom useAsyncHook w/ U.S. API"),o.createElement("li",null,o.createElement(i,{to:"/tictactoe"},"Tic Tac Toe")," - Tic Tac Toe game with useState and canvas"),o.createElement("li",null,o.createElement(i,{to:"/themes"},"Themes")," - Theme switcher with basic contexts"),o.createElement("li",null,o.createElement(i,{to:"/advancedThemes"},"Advanced Themes")," - Theme switcher with advanced contexts"),o.createElement("li",null,o.createElement(i,{to:"/orderTape"},"Order Tape")," - Fast Food Order Tape using useMemo"),o.createElement("li",null,o.createElement(i,{to:"/clock"},"React Clock")," - Clock using useInterval hook"),o.createElement("li",null,o.createElement(i,{to:"/cssClock"},"CSS Clock")," - Clock using css animations"))),k=a.ul`
+var e=Object.defineProperty,t=Object.getOwnPropertySymbols,r=Object.prototype.hasOwnProperty,n=Object.prototype.propertyIsEnumerable,l=(t,r,n)=>r in t?e(t,r,{enumerable:!0,configurable:!0,writable:!0,value:n}):t[r]=n;import{q as a,R as o,L as i,C as c,u as s,g as m,a as d,A as u,I as p,b as h,G as g,$ as E,B as f,S as x,c as b,d as y}from"./vendor.c092237c.js";const v=()=>o.createElement(o.Fragment,null,o.createElement(k,null,"Hooks Playground",o.createElement(C,null,o.createElement(T,{src:"/hooks-playground/assets/hook.3bb9184a.svg"}))),o.createElement("hr",null),o.createElement("p",null,"Yarrrrr maties. There be many hooks examples in here. Ye be warned."),o.createElement("h2",null,"Examples"),o.createElement(w,null,o.createElement("li",null,o.createElement(i,{to:"/colors"},"Colors")," - GraphQL Colors API w/ pagination"),o.createElement("li",null,o.createElement(i,{to:"/countries"},"Countries")," - Basic async useEffect w/ countries API"),o.createElement("li",null,o.createElement(i,{to:"/states"},"The United States")," - Custom useAsyncHook w/ U.S. API"),o.createElement("li",null,o.createElement(i,{to:"/tictactoe"},"Tic Tac Toe")," - Tic Tac Toe game with useState and canvas"),o.createElement("li",null,o.createElement(i,{to:"/themes"},"Themes")," - Theme switcher with basic contexts"),o.createElement("li",null,o.createElement(i,{to:"/advancedThemes"},"Advanced Themes")," - Theme switcher with advanced contexts"),o.createElement("li",null,o.createElement(i,{to:"/orderTape"},"Order Tape")," - Fast Food Order Tape using useMemo"),o.createElement("li",null,o.createElement(i,{to:"/clock"},"React Clock")," - Clock using useInterval hook"),o.createElement("li",null,o.createElement(i,{to:"/cssClock"},"CSS Clock")," - Clock using css animations"))),w=a.ul`
   list-style: none;
   li {
     margin: 5px 0;
   }
-`,w=a.h1`
+`,k=a.h1`
   display: flex;
   justify-content: space-between;
 `,C=a.div`
@@ -30,7 +30,7 @@ var e=Object.defineProperty,t=Object.getOwnPropertySymbols,r=Object.prototype.ha
       transform: rotate(-45deg);
     }
   }
-`,$=e=>o.createElement("img",((e,a)=>{for(var o in a||(a={}))r.call(a,o)&&l(e,o,a[o]);if(t)for(var o of t(a))n.call(a,o)&&l(e,o,a[o]);return e})({onError:e=>{e.currentTarget.src=""}},e)),S=()=>{const[e,t]=c.exports.useState([]);var r,n;return r=async()=>{const e=await fetch("https://api.sampleapis.com/the-states/the-states"),r=await e.json();t(r)},n=[],c.exports.useEffect((()=>{r().catch((e=>{throw console.error(e),e}))}),n),o.createElement(O,null,e.map((e=>o.createElement("li",{key:e.id},o.createElement(F,null,o.createElement(I,{src:e.flag,alt:`${e.name}'s flag`}),o.createElement("h2",null,e.name," (",e.abv,")")),o.createElement(P,null,o.createElement("p",null,"Capital: ",e.capital),o.createElement("p",null,"Largest City: ",e.largest_city),o.createElement("p",null,"Population: ",e.population),o.createElement("p",null,"Joined the Union: ",e.admitted_to_union))))))},O=a.ul`
+`,S=e=>o.createElement("img",((e,a)=>{for(var o in a||(a={}))r.call(a,o)&&l(e,o,a[o]);if(t)for(var o of t(a))n.call(a,o)&&l(e,o,a[o]);return e})({onError:e=>{e.currentTarget.src=""}},e)),$=()=>{const[e,t]=c.exports.useState([]);var r,n;return r=async()=>{const e=await fetch("https://api.sampleapis.com/the-states/the-states"),r=await e.json();t(r)},n=[],c.exports.useEffect((()=>{r().catch((e=>{throw console.error(e),e}))}),n),o.createElement(O,null,e.map((e=>o.createElement("li",{key:e.id},o.createElement(F,null,o.createElement(I,{src:e.flag,alt:`${e.name}'s flag`}),o.createElement("h2",null,e.name," (",e.abv,")")),o.createElement(P,null,o.createElement("p",null,"Capital: ",e.capital),o.createElement("p",null,"Largest City: ",e.largest_city),o.createElement("p",null,"Population: ",e.population),o.createElement("p",null,"Joined the Union: ",e.admitted_to_union))))))},O=a.ul`
   list-style: none;
 `,F=a.div`
   margin-top: 30px;
@@ -41,7 +41,7 @@ var e=Object.defineProperty,t=Object.getOwnPropertySymbols,r=Object.prototype.ha
   }
 `,P=a.div`
   margin-left: calc(2em + 25px);
-`,I=a($)`
+`,I=a(S)`
   width: 2em;
   margin-right: 20px;
 `,N=()=>{const e=s();return o.createElement(A,{onClick:()=>e.goBack()},"Back")},A=a.a`
@@ -66,7 +66,7 @@ var e=Object.defineProperty,t=Object.getOwnPropertySymbols,r=Object.prototype.ha
     content: 'N/A';
     text-align: center;
   }
-`,H=a($)`
+`,H=a(S)`
   border: 2px solid #fff;
   width: 200px;
   min-width: 200px;
@@ -78,7 +78,7 @@ var e=Object.defineProperty,t=Object.getOwnPropertySymbols,r=Object.prototype.ha
   justify-content: center;
   width: 200px;
   min-height: 100%;
-`,G=a($)`
+`,G=a(S)`
   max-height: 100px;
 `,z=a.div`
   flex: 1;
@@ -201,10 +201,10 @@ var e=Object.defineProperty,t=Object.getOwnPropertySymbols,r=Object.prototype.ha
   text-align: left;
   color: ${({type:e})=>"togo"===e?"#fae52d":"#30bb37"};
   padding-left: 25px;
-`,ke=({hereOrders:e,togoOrders:t,removeHereOrder:r,removeTogoOrder:n})=>{const l=c.exports.useMemo((()=>e.map((({id:e,item:t,price:n})=>o.createElement(fe,{key:e,number:e,price:n,item:t,type:"here",removeOrder:()=>{r(e)}})))),[e]),a=c.exports.useMemo((()=>t.map((({id:e,item:t,price:r})=>o.createElement(fe,{key:e,number:e,price:r,item:t,type:"togo",removeOrder:()=>{n(e)}})))),[t]);return o.createElement(o.Fragment,null,!!a.length&&o.createElement(o.Fragment,null,o.createElement("h3",null,"Togo Orders"),o.createElement(xe,{type:"togo"}),o.createElement("br",null),a),!!t.length&&!!e.length&&o.createElement(we,null),!!l.length&&o.createElement(o.Fragment,null,o.createElement("h3",null,"Here Orders"),o.createElement(xe,{type:"here"}),o.createElement("br",null),l))},we=a.hr`
+`,we=({hereOrders:e,togoOrders:t,removeHereOrder:r,removeTogoOrder:n})=>{const l=c.exports.useMemo((()=>e.map((({id:e,item:t,price:n})=>o.createElement(fe,{key:e,number:e,price:n,item:t,type:"here",removeOrder:()=>{r(e)}})))),[e]),a=c.exports.useMemo((()=>t.map((({id:e,item:t,price:r})=>o.createElement(fe,{key:e,number:e,price:r,item:t,type:"togo",removeOrder:()=>{n(e)}})))),[t]);return o.createElement(o.Fragment,null,!!a.length&&o.createElement(o.Fragment,null,o.createElement("h3",null,"Togo Orders"),o.createElement(xe,{type:"togo"}),o.createElement("br",null),a),!!t.length&&!!e.length&&o.createElement(ke,null),!!l.length&&o.createElement(o.Fragment,null,o.createElement("h3",null,"Here Orders"),o.createElement(xe,{type:"here"}),o.createElement("br",null),l))},ke=a.hr`
   border-color: #333;
   width: 100%;
-`,Ce=e=>({id:e.toString().padStart(4,"0"),item:(1+Math.random()).toString().slice(2,4),price:(5+5*Math.random()).toString().slice(0,4)}),Te=()=>{const[e,t]=c.exports.useState([]),[r,n]=c.exports.useState([]),[l,a]=c.exports.useState(0);return o.createElement($e,null,o.createElement(Oe,null,o.createElement(Se,{onClick:()=>{t((e=>[...e,Ce(l)].sort(((e,t)=>Number(t.id)-Number(e.id))))),a((e=>e+1))},orderType:"here"},"Here"),o.createElement(Se,{onClick:()=>{n((e=>[...e,Ce(l)].sort(((e,t)=>Number(t.id)-Number(e.id))))),a((e=>e+1))},orderType:"togo"},"Togo")),o.createElement(ke,{hereOrders:e,togoOrders:r,removeHereOrder:e=>{t((t=>t.filter((t=>t.id!==e)).sort(((e,t)=>Number(t.id)-Number(e.id))))),a((e=>e+1))},removeTogoOrder:e=>{n((t=>t.filter((t=>t.id!==e)).sort(((e,t)=>Number(t.id)-Number(e.id))))),a((e=>e+1))}}))},$e=a.div`
+`,Ce=e=>({id:e.toString().padStart(4,"0"),item:(1+Math.random()).toString().slice(2,4),price:(5+5*Math.random()).toString().slice(0,4)}),Te=()=>{const[e,t]=c.exports.useState([]),[r,n]=c.exports.useState([]),[l,a]=c.exports.useState(0);return o.createElement(Se,null,o.createElement(Oe,null,o.createElement($e,{onClick:()=>{t((e=>[...e,Ce(l)].sort(((e,t)=>Number(t.id)-Number(e.id))))),a((e=>e+1))},orderType:"here"},"Here"),o.createElement($e,{onClick:()=>{n((e=>[...e,Ce(l)].sort(((e,t)=>Number(t.id)-Number(e.id))))),a((e=>e+1))},orderType:"togo"},"Togo")),o.createElement(we,{hereOrders:e,togoOrders:r,removeHereOrder:e=>{t((t=>t.filter((t=>t.id!==e)).sort(((e,t)=>Number(t.id)-Number(e.id))))),a((e=>e+1))},removeTogoOrder:e=>{n((t=>t.filter((t=>t.id!==e)).sort(((e,t)=>Number(t.id)-Number(e.id))))),a((e=>e+1))}}))},Se=a.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -215,7 +215,7 @@ var e=Object.defineProperty,t=Object.getOwnPropertySymbols,r=Object.prototype.ha
   @media screen and (max-width: 500px) {
     width: 100%;
   }
-`,Se=a.button`
+`,$e=a.button`
   background-color: ${({orderType:e})=>"togo"===e?"#fae52d":"#30bb37"};
   border: none;
   color: #fff;
@@ -411,17 +411,9 @@ var e=Object.defineProperty,t=Object.getOwnPropertySymbols,r=Object.prototype.ha
   animation-name: rotateSeconds;
   animation-duration: 60s;
   transform: rotate(${({degrees:e})=>e}deg);
-`,ze=({time:e=new Date})=>{const t=e.getHours(),r=e.getMinutes(),n=e.getSeconds(),l=30*(t+(r+n/60)/60),a=6*(r+n/60),i=6*n;return o.createElement(Fe,null,o.createElement(Re,{degrees:i}),o.createElement(Ie,null),o.createElement("div",{className:"hour hand",style:{transform:`rotate(${l}deg`}}),o.createElement("div",{className:"minute hand",style:{transform:`rotate(${a}deg`}}),o.createElement("div",{className:"second hand",style:{transform:`rotate(${i}deg`,transition:""+(0===i?"none":"transform .025s cubic-bezier(1,1.8,1,1.8)")}}),o.createElement(Pe,null))},Re=E`
-  @keyframes bounce {
-    0% { transform: rotate(${({degrees:e})=>e}deg); }
-    2% { transform: rotate(${({degrees:e})=>e+1}deg); }
-    8% { transform: rotate(${({degrees:e})=>e-.3}deg); }
-    15% { transform: rotate(${({degrees:e})=>e}deg); }
-    100% { transform: rotate(${({degrees:e})=>e}deg); }
-  }
-`,Be=()=>{const[e,t]=c.exports.useState(new Date);return((e,t)=>{const r=c.exports.useRef((()=>{}));c.exports.useEffect((()=>{r.current=e}),[e]),c.exports.useEffect((()=>{if(null!==t){let e=setInterval((function(){r.current()}),t);return()=>clearInterval(e)}}),[t])})((()=>{t(new Date)}),1e3),o.createElement(ze,{time:e})},Xe=()=>o.createElement(qe,null,o.createElement(f,{basename:"/hooks-playground"},o.createElement(We,null,o.createElement(i,{to:"/"},"Home")," | ",o.createElement(N,null)),o.createElement(x,null,o.createElement(b,{path:"/colors"},o.createElement(le,null)),o.createElement(b,{path:"/countries"},o.createElement(j,null)),o.createElement(b,{path:"/states"},o.createElement(S,null)),o.createElement(b,{path:"/tictactoe"},o.createElement(W,null)),o.createElement(b,{path:"/themes"},o.createElement(me,null)),o.createElement(b,{path:"/advancedThemes"},o.createElement(Ee,null)),o.createElement(b,{path:"/orderTape"},o.createElement(Te,null)),o.createElement(b,{path:"/clock"},o.createElement(Be,null)),o.createElement(b,{path:"/cssClock"},o.createElement(Me,null)),o.createElement(b,{path:"/"},o.createElement(v,null))))),We=a.nav`
+`,ze=({time:e=new Date})=>{const t=e.getHours(),r=e.getMinutes(),n=e.getSeconds(),l=30*(t+(r+n/60)/60),a=6*(r+n/60),i=6*n;return o.createElement(Fe,null,o.createElement(Ie,null),o.createElement("div",{className:"hour hand",style:{transform:`rotate(${l}deg`}}),o.createElement("div",{className:"minute hand",style:{transform:`rotate(${a}deg`}}),o.createElement("div",{className:"second hand",style:{transform:`rotate(${i}deg`,transition:""+(0===i?"none":"transform .025s cubic-bezier(1,1.8,1,1.8)")}}),o.createElement(Pe,null))},Re=()=>{const[e,t]=c.exports.useState(new Date);return((e,t)=>{const r=c.exports.useRef((()=>{}));c.exports.useEffect((()=>{r.current=e}),[e]),c.exports.useEffect((()=>{if(null!==t){let e=setInterval((function(){r.current()}),t);return()=>clearInterval(e)}}),[t])})((()=>{t(new Date)}),1e3),o.createElement(ze,{time:e})},Be=()=>o.createElement(We,null,o.createElement(f,{basename:"/hooks-playground"},o.createElement(Xe,null,o.createElement(i,{to:"/"},"Home")," | ",o.createElement(N,null)),o.createElement(x,null,o.createElement(b,{path:"/colors"},o.createElement(le,null)),o.createElement(b,{path:"/countries"},o.createElement(j,null)),o.createElement(b,{path:"/states"},o.createElement($,null)),o.createElement(b,{path:"/tictactoe"},o.createElement(W,null)),o.createElement(b,{path:"/themes"},o.createElement(me,null)),o.createElement(b,{path:"/advancedThemes"},o.createElement(Ee,null)),o.createElement(b,{path:"/orderTape"},o.createElement(Te,null)),o.createElement(b,{path:"/clock"},o.createElement(Re,null)),o.createElement(b,{path:"/cssClock"},o.createElement(Me,null)),o.createElement(b,{path:"/"},o.createElement(v,null))))),Xe=a.nav`
   z-index: 999;
   position: relative;
-`,qe=a.div`
+`,We=a.div`
   width: 100%;
-`;y.render(o.createElement(o.StrictMode,null,o.createElement(Xe,null)),document.getElementById("root"));
+`;y.render(o.createElement(o.StrictMode,null,o.createElement(Be,null)),document.getElementById("root"));
