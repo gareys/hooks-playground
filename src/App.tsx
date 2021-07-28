@@ -10,6 +10,7 @@ import { ColorsScene } from './components/colors/ColorsScene';
 import { ThemesScene } from './components/themes/ThemesScene';
 import { AdvancedThemesScene } from './components/themes/AdvancedThemesScene';
 import { OrderTape } from './components/orderTape/OrderTape';
+import { ClockScene } from './components/clock/ClockScene';
 
 export const App = () => {
   return (
@@ -43,6 +44,9 @@ export const App = () => {
           </Route>
           <Route path="/orderTape">
             <OrderTape />
+          </Route>
+          <Route path="/clock">
+            <ClockScene />
           </Route>
           <Route path="/">
             <Home />

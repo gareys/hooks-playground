@@ -41,6 +41,9 @@ export const Home = () => (
         <Link to="/orderTape">Order Tape</Link> - Fast Food Order Tape using
         useMemo
       </li>
+      <li>
+        <Link to="/clock">Clock</Link> - Clock using useInterval hook
+      </li>
     </ProjectList>
   </>
 );
