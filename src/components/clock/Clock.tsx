@@ -1,109 +1,50 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const roundedNumber = (num: number) =>
-  Number((Math.round(num * 100) / 100).toFixed(2));
+import { createGlobalStyle } from 'styled-components';
+import { CenterPin, Face, Markers } from './ClockParts';
 
 export const Clock = ({ time = new Date() }) => {
-  const timeParsed = new Date(time).toLocaleString().substr(11, 8).split(':');
-  const hours = Number(timeParsed[0]);
-  const minutes = Number(timeParsed[1]);
-  const seconds = Number(timeParsed[2]);
+  const hours = time.getHours();
+  const minutes = time.getMinutes();
+  const seconds = time.getSeconds();
 
-  const hourDegrees = roundedNumber(
-    (360 / 12) * (hours + roundedNumber(minutes / 60))
-  );
-  const minuteDegrees = roundedNumber(
-    (360 / 60) * (minutes + roundedNumber(seconds / 60))
-  );
+  const hourDegrees = (360 / 12) * (hours + (minutes + seconds / 60) / 60);
+  const minuteDegrees = (360 / 60) * (minutes + seconds / 60);
   const secondDegrees = (360 / 60) * seconds;
 
   return (
     <Face>
-      <SecondHand
-        className="hand"
-        style={{ transform: `rotate(${secondDegrees}deg` }}
+      <GlobalStyle degrees={secondDegrees} />
+      <Markers />
+      <div
+        className="hour hand"
+        style={{ transform: `rotate(${hourDegrees}deg` }}
       />
-      <MinuteHand
-        className="hand"
+      <div
+        className="minute hand"
         style={{ transform: `rotate(${minuteDegrees}deg` }}
       />
-      <HourHand
-        className="hand"
-        style={{ transform: `rotate(${hourDegrees}deg` }}
+      <div
+        className="second hand"
+        style={{
+          transform: `rotate(${secondDegrees}deg`,
+          transition: `${
+            secondDegrees === 0
+              ? 'none'
+              : 'transform .025s cubic-bezier(1,1.8,1,1.8)'
+          }`,
+        }}
       />
       <CenterPin />
     </Face>
   );
 };
 
-const Face = styled.div`
-  height: 300px;
-  width: 300px;
-  background: gray;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-
-  & > .hand {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    width: 0;
+const GlobalStyle = createGlobalStyle<{ degrees: number }>`
+  @keyframes bounce {
+    0% { transform: rotate(${({ degrees }) => degrees}deg); }
+    2% { transform: rotate(${({ degrees }) => degrees + 1}deg); }
+    8% { transform: rotate(${({ degrees }) => degrees - 0.3}deg); }
+    15% { transform: rotate(${({ degrees }) => degrees}deg); }
+    100% { transform: rotate(${({ degrees }) => degrees}deg); }
   }
-`;
-
-const HourHand = styled.div`
-  &:before,
-  &:after {
-    content: '';
-    margin: 0;
-    height: 100px;
-    width: 4px;
-    background: white;
-  }
-  &:after {
-    visibility: hidden;
-  }
-`;
-
-const MinuteHand = styled.div`
-  &:before,
-  &:after {
-    content: '';
-    margin: 0;
-    height: 125px;
-    width: 4px;
-    background: black;
-  }
-  &:after {
-    visibility: hidden;
-  }
-`;
-
-const SecondHand = styled.div`
-  &:before,
-  &:after {
-    content: '';
-    margin: 0;
-    height: 130px;
-    width: 2px;
-    background: red;
-  }
-  &:after {
-    visibility: hidden;
-  }
-`;
-const CenterPin = styled.div`
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: white;
-  border-radius: 50%;
 `;

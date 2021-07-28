@@ -10,19 +10,18 @@ import { ColorsScene } from './components/colors/ColorsScene';
 import { ThemesScene } from './components/themes/ThemesScene';
 import { AdvancedThemesScene } from './components/themes/AdvancedThemesScene';
 import { OrderTape } from './components/orderTape/OrderTape';
+import { CssClock } from './components/clock/CssClock';
 import { ClockScene } from './components/clock/ClockScene';
 
 export const App = () => {
   return (
     <AppContainer>
       <Router basename="/hooks-playground">
-        <div>
-          <nav>
-            <Link to="/">Home</Link>
-            {` | `}
-            <BackLink />
-          </nav>
-        </div>
+        <Nav>
+          <Link to="/">Home</Link>
+          {` | `}
+          <BackLink />
+        </Nav>
         <Switch>
           <Route path="/colors">
             <ColorsScene />
@@ -48,6 +47,9 @@ export const App = () => {
           <Route path="/clock">
             <ClockScene />
           </Route>
+          <Route path="/cssClock">
+            <CssClock />
+          </Route>
           <Route path="/">
             <Home />
           </Route>
@@ -57,6 +59,10 @@ export const App = () => {
   );
 };
 
+const Nav = styled.nav`
+  z-index: 999;
+  position: relative;
+`;
 const AppContainer = styled.div`
   width: 100%;
 `;

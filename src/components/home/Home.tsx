@@ -42,7 +42,10 @@ export const Home = () => (
         useMemo
       </li>
       <li>
-        <Link to="/clock">Clock</Link> - Clock using useInterval hook
+        <Link to="/clock">React Clock</Link> - Clock using useInterval hook
+      </li>
+      <li>
+        <Link to="/cssClock">CSS Clock</Link> - Clock using css animations
       </li>
     </ProjectList>
   </>
