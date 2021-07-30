@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import { Face, CenterPin, Markers } from './ClockParts';
+import { Face, CenterPin, Markers, Glass, Case, Day } from './ClockParts';
+type BPS = 'smooth' | 1 | 2 | 4 | 8 | 12;
+const bpsOptions: BPS[] = ['smooth', 1, 2, 4, 8, 12];
+export const CssClock = () => {
+  const [time, setTime] = useState<Date>(new Date());
+  const [bps, setBps] = useState<BPS>(1);
+  const [shouldRender, setShouldRender] = useState<boolean>(false);
 
-export const CssClock = ({ time = new Date() }) => {
+  useEffect(() => {
+    setShouldRender(false);
+  }, [bps]);
+
+  useEffect(() => {
+    if (!shouldRender) {
+      setTime(new Date(new Date().setMilliseconds(0)));
+      setShouldRender(true);
+    }
+  }, [shouldRender]);
+
+  const day = time.getDate();
   const hours = time.getHours();
   const minutes = time.getMinutes();
   const seconds = time.getSeconds();
@@ -13,18 +30,39 @@ export const CssClock = ({ time = new Date() }) => {
   const secondDegrees = (360 / 60) * (seconds + milliseconds / 1000);
 
   return (
-    <Face>
-      <GlobalStyle
-        hourDegrees={hourDegrees}
-        minuteDegrees={minuteDegrees}
-        secondDegrees={secondDegrees}
-      />
-      <Markers />
-      <HourHand className="hour hand" degrees={hourDegrees} />
-      <MinuteHand className="minute hand" degrees={minuteDegrees} />
-      <SecondHand className="second hand" degrees={secondDegrees} />
-      <CenterPin />
-    </Face>
+    <>
+      <BPSSelector>
+        <select
+          defaultValue={bps}
+          onChange={(ev) => setBps(ev.target.value as BPS)}
+        >
+          {bpsOptions.map((bpsOption) => (
+            <option key={bpsOption} value={bpsOption}>
+              {bpsOption} bps
+            </option>
+          ))}
+        </select>
+      </BPSSelector>
+      {shouldRender && (
+        <Case>
+          <Face>
+            <GlobalStyle
+              hourDegrees={hourDegrees}
+              minuteDegrees={minuteDegrees}
+              secondDegrees={secondDegrees}
+              bps={bps}
+            />
+            <Markers />
+            <Day day={day}>{day}</Day>
+            <HourHand className="hour hand" degrees={hourDegrees} />
+            <MinuteHand className="minute hand" degrees={minuteDegrees} />
+            <SecondHand className="second hand" degrees={secondDegrees} />
+            <CenterPin />
+            <Glass />
+          </Face>
+        </Case>
+      )}
+    </>
   );
 };
 
@@ -32,10 +70,16 @@ const GlobalStyle = createGlobalStyle<{
   hourDegrees: number;
   minuteDegrees: number;
   secondDegrees: number;
+  bps: BPS;
 }>`
   .hand {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+  }
+
+  .second.hand {
+    animation-timing-function: ${({ bps }) =>
+      bps === 'smooth' ? 'linear' : `steps(${bps * 60}, end)`}
   }
 
   @keyframes rotateHours {
@@ -62,6 +106,11 @@ const GlobalStyle = createGlobalStyle<{
       transform: rotate(${({ secondDegrees }) => secondDegrees + 360}deg);
     }
   }
+`;
+
+const BPSSelector = styled.div`
+  position: relative;
+  z-index: 2;
 `;
 
 const HourHand = styled.div<{ degrees: number }>`
