@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import {
   Play,
@@ -27,12 +27,14 @@ export const TicTacToe = () => {
         number
       ];
       const ctx = canvas.getContext('2d');
-      ctx!.strokeStyle = 'red';
-      ctx!.lineWidth = 3;
-      ctx!.beginPath();
-      ctx!.moveTo(...start);
-      ctx!.lineTo(...finish);
-      ctx!.stroke();
+      if (ctx) {
+        ctx.strokeStyle = 'red';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(...start);
+        ctx.lineTo(...finish);
+        ctx.stroke();
+      }
     }
   }, [winner]);
 
@@ -76,6 +78,7 @@ export const TicTacToe = () => {
           <tr>
             {boardState.map((cell, i) => (
               <Cell
+                data-testid="cell"
                 disabled={!!boardState[i] || gameOver}
                 onClick={() => {
                   if (!boardState[i]) {
@@ -92,7 +95,7 @@ export const TicTacToe = () => {
       </Board>
       {winner && (
         <>
-          <Canvas ref={canvasRef} />
+          <Canvas ref={canvasRef} data-testid="winning-line" />
           <p>The Winner is {winner.play}!</p>
           <p>They won on the {winner.location.split('_').join(' ')}.</p>
         </>
