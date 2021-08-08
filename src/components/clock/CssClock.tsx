@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import { Face, CenterPin, Markers, Glass, Case, Day } from './ClockParts';
 type BPS = 'smooth' | 1 | 2 | 4 | 8 | 12;

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Case, CenterPin, Day, Face, Glass, Markers } from './ClockParts';
 
 export const Clock = ({ time = new Date() }) => {

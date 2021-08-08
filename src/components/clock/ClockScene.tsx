@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Clock } from './Clock';
 import { useInterval } from '../../hooks/useInterval';
 

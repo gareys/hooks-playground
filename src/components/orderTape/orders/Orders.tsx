@@ -57,7 +57,9 @@ export const Orders = ({
           {memoedTogoOrders}
         </>
       )}
-      {!!togoOrders.length && !!hereOrders.length && <Break />}
+      {!!togoOrders.length && !!hereOrders.length && (
+        <Break data-testid="order-break" />
+      )}
       {!!memoedHereOrders.length && (
         <>
           <h3>Here Orders</h3>

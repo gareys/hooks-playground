@@ -16,7 +16,7 @@ export const Order = ({
   removeOrder: () => void;
 }) => {
   return (
-    <OrderContainer>
+    <OrderContainer data-testid={`${type}-order`}>
       <span>{number}</span>
       <Item>{item}</Item>
       <Price type={type}>{price}</Price>

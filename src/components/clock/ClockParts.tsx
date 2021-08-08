@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 export const Case = styled.div`
   height: 320px;
