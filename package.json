@@ -28,6 +28,7 @@
     "jest": "^27.0.6",
     "jest-canvas-mock": "^2.3.1",
     "ts-jest": "^27.0.4",
+    "ts-mockery": "^1.2.0",
     "typescript": "^4.3.2",
     "vite": "^2.4.2"
   }

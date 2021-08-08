@@ -1,8 +1,11 @@
 import { gql, useQuery } from '@apollo/client';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 
-const ALL_COLORS = gql`
+export type Color = { hex: string; name: string };
+type QueryResp = { allColors: Color[] };
+
+export const ALL_COLORS_QUERY = gql`
   query GetAllColors($page: Int!, $perPage: Int!) {
     allColors(page: $page, perPage: $perPage) {
       name
@@ -13,12 +16,15 @@ const ALL_COLORS = gql`
 
 export const Colors = () => {
   const [nextPage, setNextPage] = useState(1);
-  const { loading, error, data, fetchMore } = useQuery(ALL_COLORS, {
-    variables: {
-      page: 0,
-      perPage: 25,
-    },
-  });
+  const { loading, error, data, fetchMore } = useQuery<QueryResp>(
+    ALL_COLORS_QUERY,
+    {
+      variables: {
+        page: 0,
+        perPage: 25,
+      },
+    }
+  );
 
   const handleGetMoreColors = () => {
     fetchMore({
@@ -27,7 +33,7 @@ export const Colors = () => {
         perPage: 25,
       },
       updateQuery: (prev, { fetchMoreResult }) => {
-        if (!fetchMoreResult.allColors.length) {
+        if (!fetchMoreResult?.allColors?.length) {
           setNextPage(0);
           return prev;
         }
@@ -45,8 +51,8 @@ export const Colors = () => {
   return (
     <ColorTable>
       <tbody>
-        {data.allColors.map(({ name, hex }: { name: string; hex: string }) => (
-          <ColoredRow key={hex} hex={hex}>
+        {data?.allColors.map(({ name, hex }: { name: string; hex: string }) => (
+          <ColoredRow key={hex} hex={hex} data-testid="color-row">
             <ColoredCell>{name}</ColoredCell>
           </ColoredRow>
         ))}
@@ -55,6 +61,7 @@ export const Colors = () => {
             key={'NEXT_PAGE'}
             hex={'#FFFFFF'}
             onClick={() => handleGetMoreColors()}
+            data-test
           >
             <ColoredCell>GET MORE COLORS</ColoredCell>
           </MoreColorsRow>

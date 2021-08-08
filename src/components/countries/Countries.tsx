@@ -1,21 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { countriesService, Country } from '../../services/countriesService';
 import { ImageWithErrorFallback } from '../shared/ImageWithErrorFallback';
 
-type Country = {
-  abbreviation: string;
-  capital: string;
-  currency: string;
-  name: string;
-  phone: string;
-  population: number;
-  media: {
-    flag: string;
-    emblem: string;
-    orthographic: string;
-  };
-  id: number;
-};
 export const Countries = () => {
   const [countries, setCountries] = useState<Country[]>([]);
 
@@ -31,10 +18,7 @@ export const Countries = () => {
 
   useEffect(() => {
     const getCountries = async () => {
-      const countriesResp = await fetch(
-        'https://api.sampleapis.com/countries/countries'
-      );
-      const countriesJson = await countriesResp.json();
+      const countriesJson = await countriesService.getCountries();
       setCountries(countriesJson);
     };
     getCountries();

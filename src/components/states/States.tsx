@@ -1,24 +1,13 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import { useAsyncHook } from '../../hooks/useAsyncHook';
+import { State, statesService } from '../../services/statesService';
 import { ImageWithErrorFallback } from '../shared/ImageWithErrorFallback';
-type State = {
-  id: number;
-  name: string;
-  abv: string;
-  capital: string;
-  largest_city: string;
-  admitted_to_union: string;
-  population: string;
-  flag: string;
-};
+
 export const States = () => {
   const [states, setStates] = useState<State[]>([]);
   useAsyncHook(async () => {
-    const statesResp = await fetch(
-      'https://api.sampleapis.com/the-states/the-states'
-    );
-    const statesJson = await statesResp.json();
+    const statesJson = await statesService.getStates();
     setStates(statesJson);
   }, []);
 
