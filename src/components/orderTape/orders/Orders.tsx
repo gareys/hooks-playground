@@ -1,4 +1,3 @@
-import React from 'react';
 import { useMemo } from 'react';
 import { Order, OrderHeader } from './Order';
 import styled from 'styled-components';

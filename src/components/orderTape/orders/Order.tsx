@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { OrderType, UniqOrder } from '../constants';
 
@@ -20,7 +19,9 @@ export const Order = ({
       <span>{number}</span>
       <Item>{item}</Item>
       <Price type={type}>{price}</Price>
-      <button onClick={removeOrder}>Complete</button>
+      <button data-testid="remove-order" onClick={removeOrder}>
+        Complete
+      </button>
     </OrderContainer>
   );
 };

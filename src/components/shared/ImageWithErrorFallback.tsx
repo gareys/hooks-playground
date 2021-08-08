@@ -1,8 +1,8 @@
-import React from 'react';
+import { DetailedHTMLProps, ImgHTMLAttributes } from 'react';
 
 export const ImageWithErrorFallback = (
-  props: React.DetailedHTMLProps<
-    React.ImgHTMLAttributes<HTMLImageElement>,
+  props: DetailedHTMLProps<
+    ImgHTMLAttributes<HTMLImageElement>,
     HTMLImageElement
   >
 ) => (

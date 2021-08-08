@@ -1,4 +1,3 @@
-import React from 'react';
 import { Orders } from './orders/Orders';
 import { useState } from 'react';
 import styled from 'styled-components';

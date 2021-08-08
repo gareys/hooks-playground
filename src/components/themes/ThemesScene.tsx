@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import { createContext, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { customThemes } from './customThemes';
 import { Themes } from './Themes';

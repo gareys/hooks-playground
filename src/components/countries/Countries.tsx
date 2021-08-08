@@ -27,7 +27,7 @@ export const Countries = () => {
   return (
     <CountryList>
       {sortedCountries.map((country) => (
-        <li key={country.id}>
+        <li key={country.id} data-testid="country-item">
           <CountryItem>
             <CountryFlag>
               <FlagImg src={country.media.flag} />

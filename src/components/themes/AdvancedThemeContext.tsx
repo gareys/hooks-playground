@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { customThemes } from './customThemes';
 import { CustomTheme, CustomThemeContextType } from './types';
@@ -10,7 +10,7 @@ const AdvancedThemeContext = createContext<CustomThemeContextType | undefined>(
 export const AdvancedThemeContextProvider = ({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) => {
   const [theme, setTheme] = useState<CustomTheme>('light');
   return (
